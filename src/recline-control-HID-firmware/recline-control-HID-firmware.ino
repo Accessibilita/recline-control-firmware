@@ -200,4 +200,6 @@ void updateSevenSegmentDisplay(int number) {
 
     // Update each segment pin based on the bit pattern
     for (int i = 0; i < 8; i++) {
-        digitalWrite(sevenSegmentPins
+        digitalWrite(sevenSegmentPins[i], !(segments & (1 << i))); // Active-low logic: turn segment on/off
+    }
+}
